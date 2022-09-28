@@ -18,4 +18,8 @@ Press 2 for Login
   [main] INFO  org.hibernate.dialect.Dialect  - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
   [main] INFO  org.hibernate.orm.connections.access  - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@c269425] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
   [main] INFO  com.HostelMS.App  - Registration success
+  [main] INFO  com.HostelMS.App  - 					---------Hostel Management System----------
+  [main] INFO  com.HostelMS.App  - 
+Press 1 for Registeration
+Press 2 for Login
   

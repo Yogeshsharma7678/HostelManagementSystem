@@ -13,7 +13,7 @@ import com.HostelMS.exception.GlobalException;
 import com.HostelMS.model.user;
 import com.HostelMS.service.admindashboard;
 import com.HostelMS.service.loginregister;
-import com.ostelMS.service.userdashboard;
+import com.HostelMS.service.userdashboard;
 
 public class loginregisterimpl implements loginregister {
 	static Logger log=Logger.getLogger(App.class);

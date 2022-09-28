@@ -7,10 +7,6 @@ import com.HostelMS.exception.GlobalException;
 import com.HostelMS.service.loginregister;
 import com.HostelMS.serviceImpl.loginregisterimpl;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
 	static Logger log=Logger.getLogger(App.class);
@@ -28,6 +24,6 @@ public class App
     	}
     	
     	
-    	
+    bs.close();	
     }
 }

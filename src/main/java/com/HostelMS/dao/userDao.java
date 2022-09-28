@@ -1,6 +1,5 @@
 package com.HostelMS.dao;
 
-
 import com.HostelMS.exception.GlobalException;
 import com.HostelMS.model.user;
 

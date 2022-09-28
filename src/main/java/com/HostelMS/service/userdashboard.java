@@ -1,7 +1,6 @@
 package com.HostelMS.service;
 
 import com.HostelMS.exception.GlobalException;
-
 public interface userdashboard {
 
 	public void dashboard(int uId) throws GlobalException;
