@@ -17,32 +17,6 @@ public class userdashboardImpl implements userdashboard {
 	static userdashboardImpl udl=new userdashboardImpl();
 	static userDao dao=new userDaoImpl();
 	static int userId;
-	@Override
-	//dashboard method
-	public void dashboard(int uId) throws GlobalException {
-		log.info("\t\t\t---------------------Welcome to userdashboard----------------------");
-		int op=0;
-		userId=uId;
-		while(op<6) {
-			//user can select operation
-			log.info("\nPress 1 for viewRoom\nPress 2 for view dueAmount \nPress 3 for view profile\nPress 4 for Update Phone number \nPress 5 for Change password");
-			
-			op=bs.nextInt();
-			
-			switch(op) {
-		
-		case 1->udl.viewRoom();
-		
-		case 2->udl.viewDueAmount();
-		
-		case 3->udl.viewProfile();
-		
-		case 4->udl.changePhonenumber();
-		
-		case 5->udl.changePassword();
-		}
-		}
-	}
 
 	//view room details of the user
 	@Override
@@ -54,9 +28,9 @@ public class userdashboardImpl implements userdashboard {
 
 	//view dueamount of the user
 	@Override
-	public void viewDueAmount() {
+	public void viewDueAmmount() {
 		//calling dao layer
-		int amount=dao.viewDueAmount(userId);
+		int amount=dao.viewDueAmmount(userId);
 		log.info("your fee due upto this month is :"+amount);
 	}
 
@@ -74,7 +48,7 @@ public class userdashboardImpl implements userdashboard {
 	public void changePhonenumber() {
 		log.info("Enter New Phone number");
 		String phone=bs.next();
-		int st=dao.changePhone(userId, phone);
+		int st=dao.changePhonenumber(userId, phone);
 		if(st==1) {
 			log.info("Phone number updated");
 		}
@@ -91,6 +65,32 @@ public class userdashboardImpl implements userdashboard {
 		int st=dao.changePassword(userId, oldpwd, newpwd);
 		if(st==1) {
 			log.info("password changed");
+		}
+	}
+
+	@Override
+	public void dashboard() throws GlobalException {
+		log.info("\t\t\t---------------------Welcome to userdashboard----------------------");
+		int op=0;
+		
+		while(op<6) {
+			//user can select operation
+			log.info("\nPress 1 for viewRoom\nPress 2 for view dueAmount \nPress 3 for view profile\nPress 4 for Update Phone number \nPress 5 for Change password");
+			
+			op=bs.nextInt();
+			
+			switch(op) {
+		
+		case 1->udl.viewRoom();
+		
+		case 2->udl.viewDueAmmount();
+		
+		case 3->udl.viewProfile();
+		
+		case 4->udl.changePhonenumber();
+		
+		case 5->udl.changePassword();
+		}
 		}
 	}
 

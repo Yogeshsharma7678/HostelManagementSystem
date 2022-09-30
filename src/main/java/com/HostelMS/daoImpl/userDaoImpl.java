@@ -22,16 +22,6 @@ public class userDaoImpl implements userDao{
 		
 	}
 
-	//getting dueamount
-	@Override
-	public int viewDueAmount(int uId) {
-	//autoclosable session
-		try(Session ses=HibernateUtil.getSession()){
-		
-			int amount=(int)ses.createQuery("select userFee from user where userId=:uId").setParameter("uId", uId).uniqueResult();
-				return amount;
-		}
-	}
 
 	//getting profile of the user
 	@Override
@@ -41,17 +31,6 @@ public class userDaoImpl implements userDao{
 			user u2=ses.get(user.class,uId);
 			return u2;
 	}
-	}
-	//updating phone number
-	@Override
-	public int changePhone(int uId, String phone) {
-		
-		try(Session ses=HibernateUtil.getSession()){
-			ses.beginTransaction();
-		int status=ses.createQuery("update user set userPhone=:phone where userId=:uId").setParameter("phone", phone).setParameter("uId",uId).executeUpdate();
-			ses.getTransaction().commit();
-			return status;	
-		}
 	}
 
 	//updating password if current password is correct
@@ -78,5 +57,26 @@ public class userDaoImpl implements userDao{
 		
 		
 	}
+	//getting dueamount
+	@Override
+	public int viewDueAmmount(int uId) {
+		// TODO Auto-generated method stub
 
+		try(Session ses=HibernateUtil.getSession()){
+		
+			int amount=(int)ses.createQuery("select userFee from user where userId=:uId").setParameter("uId", uId).uniqueResult();
+				return amount;
+	}
+	}
+	@Override
+	public int changePhonenumber(int uId, String phone) {
+		// TODO Auto-generated method stub
+
+		try(Session ses=HibernateUtil.getSession()){
+			ses.beginTransaction();
+		int status=ses.createQuery("update user set userPhone=:phone where userId=:uId").setParameter("phone", phone).setParameter("uId",uId).executeUpdate();
+			ses.getTransaction().commit();
+			return status;	
+	}
+	}
 }

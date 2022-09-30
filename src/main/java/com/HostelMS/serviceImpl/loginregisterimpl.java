@@ -59,7 +59,7 @@ public class loginregisterimpl implements loginregister {
 }
 
 	public void login()throws GlobalException {
-		log.info("welcome to Login");
+		log.info("---welcome ;) to Login---");
 		
 		log.info("Enter username");
 		String username=bs.next();
@@ -68,13 +68,13 @@ public class loginregisterimpl implements loginregister {
 		//checking login
 		user u1=dao.login(username, password);
 		//success message
-		log.info("Hello"+u1.getUserName()+"Login Success");
+		log.info("Hello "+u1.getUserName()+" Login Success");
 		userdashboard udl=new userdashboardImpl();
 		admindashboard adl=new admindashboardImpl();
 		//if userrole is student userdashboard will open
 		//if userrole is admin admindashboard will open
 		if(u1.getUserRole().equals("student")) {
-			udl.dashboard(u1.getUserId());
+			udl.dashboard();
 		}
 		else if(u1.getUserRole().equals("admin")) {
 			adl.dashboard();
