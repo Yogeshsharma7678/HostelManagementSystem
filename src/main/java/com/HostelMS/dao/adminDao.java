@@ -1,3 +1,7 @@
+/* This interface is declare to achiecve abstraction
+ * and declare the methods which can maintain by admin
+ */
+
 package com.HostelMS.dao;
 
 import java.util.List;

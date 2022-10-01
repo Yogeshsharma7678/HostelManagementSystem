@@ -37,13 +37,20 @@
     <version>1.2.17</version>
 </dependency>
 
-    <dependency>
-     <groupId>org.junit.jupiter</groupId>
+
+  <dependency>
+        <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-engine</artifactId>
         <version>5.4.0</version>
-      <scope>test</scope>
+        <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-ehcache -->
+    <!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner -->
+<dependency>
+    <groupId>org.junit.platform</groupId>
+    <artifactId>junit-platform-runner</artifactId>
+    <version>1.2.0</version>
+    <scope>test</scope>
+</dependency>
 <dependency>
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-ehcache</artifactId>
