@@ -1,3 +1,8 @@
+/* there's an  interface to provide abstraction 
+ * and some abstract methods which are gonna 
+ * be used in the program
+ */
+
 package com.HostelMS.dao;
 
 import com.HostelMS.exception.GlobalException;

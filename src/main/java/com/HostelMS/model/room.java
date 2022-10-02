@@ -1,3 +1,6 @@
+/*This is one of the important model 
+ * of the project
+ */
 package com.HostelMS.model;
 
 import javax.persistence.Entity;
@@ -6,7 +9,8 @@ import javax.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-//getters and setters from lombok
+
+//We're using getters and settersfrom lombok
 @Entity
 @Getter
 @Setter

@@ -157,12 +157,14 @@ public class adminDaoImpl implements adminDao {
 	}
 
 	@Override
+	//method to view all users in a room
 	public List<user> userInARoom(int rId) {
 		// TODO Auto-generated method stub
 		try (Session ses = HibernateUtil.getSession()) {
 
 			Query q = ses.createQuery("from user where userRoom_roomId =:rId").setParameter("rId", rId);
 
+			@SuppressWarnings("unchecked")
 			List<user> rl = q.getResultList();
 			return rl;
 		}

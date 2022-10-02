@@ -1,3 +1,6 @@
+/* This interface is implementing all the Modules
+ * of admindashboard
+ */
 package com.HostelMS.serviceImpl;
 
 import org.apache.log4j.Logger;
@@ -13,13 +16,15 @@ import com.HostelMS.model.user;
 import com.HostelMS.service.admindashboard;
 
 public class admindashboardImpl implements admindashboard {
-
+	// declare logger,Scanner,admindashboard & admin dao object as static so that
+	// any method can easily use it
 	static Logger log = Logger.getLogger(admindashboardImpl.class);
 	static Scanner sc = new Scanner(System.in);
 	static admindashboard adl = new admindashboardImpl();
 	static adminDao dao = new adminDaoImpl();
 
 	@Override
+	// This methood is just to chooosing options for admin
 	public void dashboard() throws GlobalException {
 		log.info("\n\t\t------welcome to Admin dashboard--------\n");
 		int op = 0;
@@ -46,6 +51,7 @@ public class admindashboardImpl implements admindashboard {
 	}
 
 	@Override
+	// methood to view rooms in the hostel
 	public void viewRooms() {
 
 		List<room> st = dao.viewRooms();
@@ -58,6 +64,7 @@ public class admindashboardImpl implements admindashboard {
 	}
 
 	@Override
+	// method to view all the users in the hostel including admin
 	public void viewUsers() {
 		// TODO Auto-generated method stub
 		List<user> st = dao.viewUsers();
@@ -69,6 +76,7 @@ public class admindashboardImpl implements admindashboard {
 	}
 
 	@Override
+	// method To view users in one room
 	public void userInARoom() {
 		// TODO Auto-generated method stub
 		log.info("enter room id :");
@@ -76,13 +84,15 @@ public class admindashboardImpl implements admindashboard {
 		List<user> st = dao.userInARoom(rId);
 		for (user u : st) {
 
-			log.info("\tUser id is:" + u.getUserId() + "\tUser Name is:" + u.getUserName() + "\tUser addres is : " + u.getUserAddress() + "\tUser fee is :"
-					+ u.getUserFee() + "\tUser phone is :" + u.getUserPhone() + "\tUser Role is :" + u.getUserRole());
+			log.info("\tUser id is:" + u.getUserId() + "\tUser Name is:" + u.getUserName() + "\tUser addres is : "
+					+ u.getUserAddress() + "\tUser fee is :" + u.getUserFee() + "\tUser phone is :" + u.getUserPhone()
+					+ "\tUser Role is :" + u.getUserRole());
 		}
 
 	}
 
 	@Override
+	// methood to create rooms
 	public void createRoom() {
 		// TODO Auto-generated method stub
 		log.info("---enter room details---");
@@ -110,6 +120,7 @@ public class admindashboardImpl implements admindashboard {
 	}
 
 	@Override
+	// method to alloting rooms to users
 	public void allotRoom() throws GlobalException {
 		// TODO Auto-generated method stub
 		log.info("---Alloting room to users---");
@@ -130,6 +141,7 @@ public class admindashboardImpl implements admindashboard {
 	}
 
 	@Override
+	// method to delete any user from the hostel
 	public void deleteUser() throws GlobalException {
 		// TODO Auto-generated method stub
 
@@ -147,6 +159,7 @@ public class admindashboardImpl implements admindashboard {
 	}
 
 	@Override
+	// To add due to any user
 	public void addDueAmount() throws GlobalException {
 		// TODO Auto-generated method stub
 		log.info("enter amount which u want to add");
@@ -167,6 +180,7 @@ public class admindashboardImpl implements admindashboard {
 	}
 
 	@Override
+	// method to print all the payable amount left for user
 	public void paidDueAmount() throws GlobalException {
 		// TODO Auto-generated method stub
 		log.info("enter amount which is already paid by user");
@@ -186,6 +200,7 @@ public class admindashboardImpl implements admindashboard {
 	}
 
 	@Override
+	// method to print profile of any user
 	public void viewUserProfile() {
 		// TODO Auto-generated method stub
 		log.info("enter user id ");

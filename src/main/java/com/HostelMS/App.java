@@ -1,8 +1,9 @@
 /* Hostel Management System is used to allot Room to the Student
-Hostel Management System is designed with JPA, HIBERNATE, 
+It is designed with JPA, HIBERNATE, 
 MySQL and perfoming unit testing with JUNIT 5 with two user
 ->End User
 ->Admin user
+
  *Yogesh Sharma
  */
 package com.HostelMS;
@@ -22,19 +23,24 @@ public class App {
 
 	public static void main(String[] args) throws GlobalException { // Scanner object
 		Scanner sc = new Scanner(System.in);
-		log.info("\t\t\t\t\t---------Hostel Management System----------");
+		log.info("\t\t\t\t---------Hostel Management System----------");
 
-		// creating object of loginregisterimpl() method with the reference of loginRegister
+		// creating object of loginregisterimpl() method with the reference of
+		// loginRegister
 		loginregister loginreg = new loginregisterimpl();
-		log.info("\nPress 1 for Registeration\nPress 2 for Login\nPress ");
-		int op = sc.nextInt();
+		int op = 0;
+		while (op < 4) {
+			log.info("\nPress 1 for Registeration\nPress 2 for Login\nPress 3 For exit ");
+			op = sc.nextInt();
 
-		// switch case to choose any option to both user
-		switch (op) {
-			//calling login & register methods using object 
-			case 1 -> loginreg.register();
-			case 2 -> loginreg.login();
+			// switch case to choose any option to both user
+			switch (op) {
+				// calling login & register methods using object
+				case 1 -> loginreg.register();
+				case 2 -> loginreg.login();
+				case 3 -> System.exit(0);
+			}
+			sc.close();
 		}
-		sc.close();
 	}
 }

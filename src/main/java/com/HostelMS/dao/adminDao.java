@@ -1,4 +1,6 @@
-/* This interface is declare to achiecve abstraction
+/* there's an  interface to provide abstraction 
+ * and some abstract methods which are gonna 
+ * be used in the program
  * and declare the methods which can maintain by admin
  */
 
